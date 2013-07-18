@@ -23,3 +23,6 @@ __Creating tasks is as easy as__
   - AppScript (for OmniFocus)
   - Chronic (for date parsing)
   - A Mac (no brainer)
+
+  Credits:
+  Brett Terpstra (@ttscoff) for OmniFocus task inspiration and his date parser method
