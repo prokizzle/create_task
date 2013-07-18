@@ -17,7 +17,9 @@ __Creating tasks is as easy as__
 
     CreateTask::Reminders.new(name: "Task name", due_date: "7/17/2013")
 
+
   ###Requirements:
+
   - AppScript (for OmniFocus)
   - Chronic (for date parsing)
   - A Mac (no brainer)
