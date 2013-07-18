@@ -1,5 +1,5 @@
 #Create Task
-##A module for creating tasks in OmniFocus, Things, DueApp, and Apple Reminders on the Mac
+_A module for creating tasks in OmniFocus, Things, DueApp, and Apple Reminders on the Mac_
 
 I created this module for easy integration from my ruby apps into the Big 4 of Task Managers.
 
