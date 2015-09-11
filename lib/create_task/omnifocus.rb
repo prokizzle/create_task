@@ -9,10 +9,9 @@ module CreateTask
     end
 
     def self.processed_args(args)
-      if args[:start_date]
-        args[:defer_date] = args[:start_date]
-        args.delete(:start_date)
-      end
+      args.each{ |k,v| args.delete(k) if v.nil? }
+      args[:defer_date] = args[:start_date] if args[:start_date]
+      args.delete(:start_date)
       args[:due_date] = parse_date(args[:due_date]) if args[:due_date]
       args[:defer_date] = parse_date(args[:defer_date]) if args[:defer_date]
       puts args
