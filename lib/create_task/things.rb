@@ -1,7 +1,7 @@
 # CreateTask Gem
 module CreateTask
   # Creates a task in Things app
-  class Things
+  class Things < CreateTask::Helper
     def self.create(args)
       `osascript << 'APPLESCRIPT'
          set d_date to date "#{args[:due_date]}"
