@@ -9,7 +9,7 @@ module CreateTask
       args[:due_date] = parse_date(args[:due_date])
       args[:start_date] = parse_date(args[:start_date])
 
-      of = app("OmniFocus")
+      of = app('OmniFocus')
       @dd= of.default_document
       @dd.make(:new => :inbox_task, :with_properties => args.to_hash)
     end

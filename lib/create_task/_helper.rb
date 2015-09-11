@@ -2,11 +2,12 @@
 module CreateTask
   # Helper for creating tasks
   class Helper
-    def self.new_task(coupon, settings)
-      CreateTask::OmniFocus.create(coupon.to_hash) if settings.use_omnifocus
-      CreateTask::Reminders.create(coupon.to_hash) if settings.use_reminders
-      CreateTask::Things.create(coupon.to_hash) if settings.use_things
-      CreateTask::DueApp.create(coupon.to_hash) if settings.use_dueapp
+    def self.new_task(task, app)
+      task = {name: name, due_date: due, start_date: start, note: note}
+      CreateTask::OmniFocus.create(task) if app == 'omnifocus'
+      CreateTask::Reminders.create(task) if app == 'reminders'
+      CreateTask::Things.create(task) if app == 'things'
+      CreateTask::DueApp.create(task) if app == 'dueapp'
     end
 
     def default_parsed_date(datestring)

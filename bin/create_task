@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 require 'create_task'
 app = ARGV.shift
-CreateTask::Things.new(ARGV) if app == 'things'
-CreateTask::OmniFocus.new(ARGV) if app == 'omnifocus'
-CreateTask::Reminders.new(ARGV) if app == 'reminders'
-CreateTask::DueApp.new(ARGV) if app == 'due'
-
+task = {
+  name: ARGV.shift, due_date: ARGV.shift,
+  start_date: ARGV.shift, note: ARGV.shift }
+CreateTask::Helper.new_task(task, app)
