@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+require 'create_task'
+app = ARGV.shift
+CreateTask::Things.new(ARGV) if app == 'things'
+CreateTask::OmniFocus.new(ARGV) if app == 'omnifocus'
+CreateTask::Reminders.new(ARGV) if app == 'reminders'
+CreateTask::DueApp.new(ARGV) if app == 'due'
+
