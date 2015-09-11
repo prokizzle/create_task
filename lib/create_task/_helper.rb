@@ -3,7 +3,6 @@ module CreateTask
   # Helper for creating tasks
   class Helper
     def self.new_task(task, app)
-      task = {name: name, due_date: due, start_date: start, note: note}
       CreateTask::OmniFocus.create(task) if app == 'omnifocus'
       CreateTask::Reminders.create(task) if app == 'reminders'
       CreateTask::Things.create(task) if app == 'things'
