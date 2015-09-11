@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
-require 'create_task'
+require_relative '../lib/create_task'
+# require 'create_task'
 app = ARGV.shift
 task = {
   name: ARGV.shift, due_date: ARGV.shift,
