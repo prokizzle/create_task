@@ -1,7 +1,7 @@
 # CreateTask Gem
 module CreateTask
   # Creates a task in OmniFocus
-  class OmniFocus
+  class OmniFocus < CreateTask::Helper
     require 'appscript'#;include Appscript
     def self.create(args)
       of = app('OmniFocus')
@@ -9,13 +9,15 @@ module CreateTask
       dd.make(new: :inbox_task, with_properties: processed_args(args))
     end
 
-    def processed_args(args)
+    def self.processed_args(args)
       if args[:start_date]
         args[:defer_date] = args[:start_date]
         args.delete(:start_date)
       end
       args[:due_date] = parse_date(args[:due_date]) if args[:due_date]
       args[:defer_date] = parse_date(args[:defer_date]) if args[:defer_date]
+      puts args
       args
     end
   end
+end
