@@ -2,7 +2,6 @@
 module CreateTask
   # Creates a task in OmniFocus
   class OmniFocus < CreateTask::Helper
-    require 'appscript'#;include Appscript
     def self.create(args)
       of = app('OmniFocus')
       dd= of.default_document
